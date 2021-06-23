@@ -12,5 +12,7 @@ Describe "Get-Planets" {
     $allPlanets[2].Name | Should -Be "Earth"
   }
 
-  
+  It 'Pluto is not part of our Solar System' {
+    $allPlanets.Name -contains 'Pluto' | Should -Be false
+  }
 }
