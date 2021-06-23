@@ -14,5 +14,9 @@ Describe "Get-Planets" {
 
   It 'Pluto is not part of our Solar System' {
     $allPlanets.Name -contains 'Pluto' | Should -Be false
+    # or
+    Get-Planets "Pluto" | Should -Be $null
+    # TODO use the  `Where-Object` CmdLet.
+    # $allPlanets | Where-Object { $_.Name -like "Earth" } | Should -BeEmptyOrNull
   }
 }
